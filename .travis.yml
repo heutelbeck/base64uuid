@@ -13,10 +13,7 @@ jdk:
 env:
   - SONAR_HOST=https://sonar.ftk.de
 
-# skip "mvn install -skipTexts=true" before building
 install: true
-#install:
-#  - nvm install $NODE_VERSION
 
 git:
   lfs_skip_smudge: true
