@@ -1,6 +1,4 @@
-# Prepare environment for building docker images
 sudo: required
-
 services:
   - docker
 
