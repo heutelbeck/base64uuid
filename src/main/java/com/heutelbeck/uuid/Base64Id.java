@@ -19,27 +19,27 @@ import java.util.UUID;
 
 import org.apache.commons.codec.binary.Base64;
 
-import lombok.experimental.UtilityClass;
-
 /**
  * 
  * This utility class provides convenience methods to convert UUIDs to a more
  * compact URL safe String representation.
  * 
- * @author dominic
+ * @author dominic@heutelbeck.com
  *
  */
-@UtilityClass
 public class Base64Id {
 	private static final String THE_DECODED_BASE64_MUST_HAVE_D_BYTES_BUT_IT_WAS_D = "The identifier must have %d bytes, but it was %d.";
 	private static final String THE_IDENTIFIER_IS_NOT_IN_BASE64 = "The Identifier is not in Base64.";
 	private static final String THE_IDENTIFIER_MUST_NOT_BE_NULL = "The Identifier must not be null.";
 	private static final int UUID_BYTES = Long.BYTES * 2;
 
+	private Base64Id() {
+	}
+
 	/**
 	 * @return a base 64 encoded UUID
 	 */
-	public String randomID() {
+	public static String randomID() {
 		return ofUUID(UUID.randomUUID());
 	}
 
@@ -47,7 +47,7 @@ public class Base64Id {
 	 * @param uuid a UUID
 	 * @return a base 64 encoded UUID
 	 */
-	public String ofUUID(UUID uuid) {
+	public static String ofUUID(UUID uuid) {
 		var bytes = new byte[UUID_BYTES];
 		longToBytes(uuid.getLeastSignificantBits(), bytes, 0);
 		longToBytes(uuid.getMostSignificantBits(), bytes, 8);
@@ -78,8 +78,8 @@ public class Base64Id {
 
 	/**
 	 * @param id a String
-	 * @throws IllegalArgumentException when the String is not a valid UUID in base 64
-	 *                           encoding
+	 * @throws IllegalArgumentException when the String is not a valid UUID in base
+	 *                                  64 encoding
 	 * @return the decoded bytes of the Base64 Sting.
 	 */
 	public static byte[] validate(String id) {
@@ -93,8 +93,8 @@ public class Base64Id {
 		var bytes = Base64.decodeBase64(id);
 
 		if (bytes.length != UUID_BYTES) {
-			throw new IllegalArgumentException(String.format(THE_DECODED_BASE64_MUST_HAVE_D_BYTES_BUT_IT_WAS_D, UUID_BYTES,
-					Base64.decodeBase64(id).length));
+			throw new IllegalArgumentException(String.format(THE_DECODED_BASE64_MUST_HAVE_D_BYTES_BUT_IT_WAS_D,
+					UUID_BYTES, Base64.decodeBase64(id).length));
 		}
 		return bytes;
 	}
@@ -103,21 +103,21 @@ public class Base64Id {
 	 * @param id a Base64 encoded UUID
 	 * @return a UUID
 	 */
-	public UUID toUUID(String id) {
+	public static UUID toUUID(String id) {
 		var bytes = validate(id);
 		var leastSigBits = bytesToLong(bytes, 0);
 		var mostSigBits = bytesToLong(bytes, 8);
 		return new UUID(mostSigBits, leastSigBits);
 	}
 
-	private void longToBytes(long l, byte[] bytes, final int offset) {
+	private static void longToBytes(long l, byte[] bytes, final int offset) {
 		for (int i = 7 + offset; i >= offset; i--) {
 			bytes[i] = (byte) (l & 0xFF);
 			l >>= 8;
 		}
 	}
 
-	private long bytesToLong(final byte[] bytes, final int offset) {
+	private static long bytesToLong(final byte[] bytes, final int offset) {
 		long result = 0;
 		for (int i = offset; i < Long.BYTES + offset; i++) {
 			result <<= Long.BYTES;
