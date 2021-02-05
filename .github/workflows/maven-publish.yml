@@ -23,8 +23,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to FTK Nexus Server
-      run: echo $MAVEN_USERNAME 
-      # mvn -B deploy
+      run: mvn -B deploy
       env:
         MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
         MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
