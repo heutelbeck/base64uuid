@@ -1,4 +1,4 @@
-name: Maven Package
+name: build-and-deploy-each-push
 
 on:
   push:
