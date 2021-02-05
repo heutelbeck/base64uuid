@@ -20,7 +20,7 @@ jobs:
         java-version: 11
         server-id: openconjurer-public-snapshots
         server-username: MAVEN_USERNAME
-        erver-password: MAVEN_PASSWORD
+        server-password: MAVEN_PASSWORD
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
