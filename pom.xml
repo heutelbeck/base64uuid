@@ -79,19 +79,20 @@
 			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<distributionManagement>
 		<repository>
-			<id>openconjurer-public</id>
-			<name>OpenConjurer Nexus Maven Release Repository</name>
-			<url>https://nexus.openconjurer.org/repository/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>openconjurer-public-snapshots</id>
-			<name>OpenConjurer Nexus Maven Snapshot Repository</name>
-			<url>https://nexus.openconjurer.org/repository/snapshots/</url>
-		</snapshotRepository>
+			<id>github</id>
+     		<name>GitHub heutelbeck Apache Maven Packages</name>
+     		<url>https://maven.pkg.github.com/heutelbeck/maven</url>
+   		</repository>
+   		<snapshotRepository>
+			<id>github</id>
+     		<name>GitHub heutelbeck Apache Maven Packages</name>
+     		<url>https://maven.pkg.github.com/heutelbeck/maven</url>
+   		</snapshotRepository>
 	</distributionManagement>
 
 </project>
