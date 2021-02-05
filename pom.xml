@@ -86,12 +86,12 @@
 		<repository>
 			<id>github</id>
      		<name>GitHub heutelbeck Apache Maven Packages</name>
-     		<url>https://maven.pkg.github.com/heutelbeck/maven</url>
+     		<url>https://maven.pkg.github.com/heutelbeck/base64uuid</url>
    		</repository>
    		<snapshotRepository>
 			<id>github</id>
      		<name>GitHub heutelbeck Apache Maven Packages</name>
-     		<url>https://maven.pkg.github.com/heutelbeck/maven</url>
+     		<url>https://maven.pkg.github.com/heutelbeck/base64uuid</url>
    		</snapshotRepository>
 	</distributionManagement>
 
