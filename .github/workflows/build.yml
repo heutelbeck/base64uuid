@@ -19,10 +19,18 @@ jobs:
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
 
+    - name: Cache Maven dependencies
+      uses: actions/cache@v2      
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+          
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Publish to FTK Nexus Server
+    - name: Publish to Maven Repository
       run: mvn -B deploy
       env:
         MAVEN_USERNAME: ${{ secrets.GHUB_USERNAME }}
