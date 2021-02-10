@@ -21,11 +21,9 @@ jobs:
       with:
         githubServer: false
         servers: |
-          [{
-              "id": "sapl", 
+          [{  "id": "sapl", 
               "username": "${{ secrets.GHUB_USERNAME }}",
-              "password": "${{ secrets.GHUB_ACCESS_TOKEN }}"
-           }]
+              "password": "${{ secrets.GHUB_ACCESS_TOKEN }}"  }]
     
     - name: Cache Maven dependencies
       uses: actions/cache@v2      
@@ -38,7 +36,7 @@ jobs:
     - name: Build with Maven (JUnit, JaCoCo, Sonar) 
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent install org.jacoco:jacoco-maven-plugin:report sonar:sonar -Dsonar.host.url=https://sonar.ftk.de -Dsonar.login=${SONAR_TOKEN} -Dsonar.exclusions=**/xtext-gen/**/*,**/xtend-gen/**/*,**/emf-gen/**/*
+      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -Dsonar.host.url=https://sonar.ftk.de -Dsonar.login=${SONAR_TOKEN} -Dsonar.exclusions=**/xtext-gen/**/*,**/xtend-gen/**/*,**/emf-gen/**/*
     
     - name: Publish to Maven Repository
       run: mvn -B deploy
