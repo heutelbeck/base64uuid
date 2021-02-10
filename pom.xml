@@ -94,8 +94,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>github</id>
-			<name>Heutelbeck GitHub Maven Repository</name>
+			<id>sapl</id>
+			<name>SAPL Maven Repository</name>
     		<url>https://maven.pkg.github.com/heutelbeck/packages</url>		
 		</repository>
 	</distributionManagement>
