@@ -15,9 +15,24 @@ Usage example: `Base64Id.randomID()`
 
 <repositories>
    <repository>
-      <id>github</id>
-      <name>Heutelbeck GitHub Maven Repository</name>
+      <id>sapl</id>
+      <name>SAPL Maven Repository</name>
       <url>https://maven.pkg.github.com/heutelbeck/packages</url>		
    </repository>
 </repositories>
+```
+
+## Configure Maven
+
+Generate a personal access token for your GitHub account and add this to your ~/.m2/settings.xml:
+
+```
+   </servers>
+      <server>
+         <id>sapl</id>
+         <username>USERNAME</username>
+         <!-- see https://github.com/settings/tokens -->
+         <password>ACCESS TOKEN</password>
+      </server>
+   </servers>
 ```
