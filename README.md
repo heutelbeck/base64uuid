@@ -6,10 +6,37 @@ Usage example: `Base64Id.randomID()`
 
 ## Dependencies:
 
+### Latest release:
+
 ```
-<dependency>
-  <groupId>com.heutelbeck</groupId>
-  <artifactId>base64uuid</artifactId>
-  <version>1.0.0</version>
-</dependency>
+	<dependencies>
+		<dependency>
+			<groupId>com.heutelbeck</groupId>
+			<artifactId>base64uuid</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
 ```
+
+### Current snapshot:
+
+```
+	<dependencies>
+		<dependency>
+			<groupId>com.heutelbeck</groupId>
+			<artifactId>base64uuid</artifactId>
+			<version>1.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+```
+

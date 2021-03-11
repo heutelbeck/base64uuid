@@ -28,6 +28,8 @@
 
 	<description>Provides a compact String representation for UUIDs, usefull whenever you have to present IDs in URLs or UIs</description>
 
+    <url>https://github.com/heutelbeck/base64uuid</url>
+	
 	<licenses>
 		<license>
 			<name>Apache 2.0</name>
