@@ -37,9 +37,9 @@ jobs:
         cat <(echo -e "${{ secrets.OSSRH_GPG_SECRET_KEY }}") | gpg --batch --import
         gpg --list-secret-keys --keyid-format LONG
 
- #   - name: Publish to Central
- #     run: mvn -B --no-transfer-progress clean deploy
- #     env:
- #       MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
- #       MAVEN_PASSWORD: ${{ secrets.OSSRH_ACCESS_TOKEN }}
+    - name: Deploy to Central
+      run: mvn -B --no-transfer-progress clean deploy
+      env:
+        MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+        MAVEN_PASSWORD: ${{ secrets.OSSRH_ACCESS_TOKEN }}
  
