@@ -10,29 +10,6 @@ Usage example: `Base64Id.randomID()`
 <dependency>
   <groupId>com.heutelbeck</groupId>
   <artifactId>base64uuid</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0</version>
 </dependency>
-
-<repositories>
-   <repository>
-      <id>sapl</id>
-      <name>SAPL Maven Repository</name>
-      <url>https://maven.pkg.github.com/heutelbeck/packages</url>		
-   </repository>
-</repositories>
-```
-
-## Configure Maven
-
-Generate a personal access token for your GitHub account and add this to your ~/.m2/settings.xml:
-
-```
-   </servers>
-      <server>
-         <id>sapl</id>
-         <username>USERNAME</username>
-         <!-- see https://github.com/settings/tokens -->
-         <password>ACCESS TOKEN</password>
-      </server>
-   </servers>
 ```
