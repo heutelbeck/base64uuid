@@ -15,14 +15,12 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.heutelbeck</groupId>
 	<artifactId>base64uuid</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>Base64 UUIDs</name>
 
@@ -53,7 +51,8 @@
 		<connection>scm:git:git://github.com/heutelbeck/base64uuid.git</connection>
 		<developerConnection>scm:git:ssh://github.com/heutelbeck/base64uuid.git</developerConnection>
 		<url>https://github.com/heutelbeck/base64uuid</url>
-	</scm>
+	  <tag>v1.0.0</tag>
+  </scm>
 
 	<properties>
 		<maven.compiler.source>11</maven.compiler.source>
