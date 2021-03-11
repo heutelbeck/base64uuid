@@ -22,7 +22,7 @@
 
 	<groupId>com.heutelbeck</groupId>
 	<artifactId>base64uuid</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<name>Base64 UUIDs</name>
 
