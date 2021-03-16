@@ -25,7 +25,7 @@ import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
 
-public class Base64IdTest {
+class Base64IdTest {
 
 	private static final String TOO_SHORT_BASE64 = "x";
 	private static final String TOO_LONG_BASE64 = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
@@ -34,7 +34,7 @@ public class Base64IdTest {
 	private static final String INVALID_RIGHT_LENGTH = "y@@@yyyyyyyyyyyyyyyyyy";
 
 	@Test
-	public void factoryReturnsValidBase64Id() {
+	void factoryReturnsValidBase64Id() {
 		var uuid = UUID.randomUUID();
 		var encoded = Base64Id.ofUUID(uuid);
 		var decoded = Base64Id.toUUID(encoded);
@@ -42,60 +42,60 @@ public class Base64IdTest {
 	}
 
 	@Test
-	public void encodedDecodesBack() {
+	void encodedDecodesBack() {
 		assertTrue(Base64Id.isValid(Base64Id.randomID()), "factory returned invalid id");
 	}
 
 	@Test
-	public void nullIsInvalid() {
+	void nullIsInvalid() {
 		assertFalse(Base64Id.isValid(null), "null was valid");
 	}
 
 	@Test
-	public void invalidRightLengthIsInvalid() {
+	void invalidRightLengthIsInvalid() {
 		assertFalse(Base64Id.isValid(INVALID_RIGHT_LENGTH), "invalid was valid");
 	}
 
 	@Test
-	public void nonBase64StringIsInvalid() {
+	void nonBase64StringIsInvalid() {
 		assertFalse(Base64Id.isValid(NON_BASE64), "non Base64 String was valid");
 	}
 
 	@Test
-	public void shortLengthIsInvalid() {
+	void shortLengthIsInvalid() {
 		assertFalse(Base64Id.isValid(TOO_SHORT_BASE64), "non Base64 String was valid");
 	}
 
 	@Test
-	public void longLengthIsInvalid() {
+	void longLengthIsInvalid() {
 		assertFalse(Base64Id.isValid(TOO_LONG_BASE64), "non Base64 String was valid");
 	}
 
 	@Test
-	public void nullThrowsInvalid() {
+	void nullThrowsInvalid() {
 		assertThrows(IllegalArgumentException.class, () -> Base64Id.validate(null), "null must not be valid");
 	}
 
 	@Test
-	public void nonBase64StringThrowsInvalid() {
+	void nonBase64StringThrowsInvalid() {
 		assertThrows(IllegalArgumentException.class, () -> Base64Id.validate(NON_BASE64),
 				"String with non Base64 characters must not be valid");
 	}
 
 	@Test
-	public void shortLengthThrowsInvalid() {
+	void shortLengthThrowsInvalid() {
 		assertThrows(IllegalArgumentException.class, () -> Base64Id.validate(TOO_SHORT_BASE64),
 				"String with too little characters must not be valid");
 	}
 
 	@Test
-	public void longLengthThrowsInvalid() {
+	void longLengthThrowsInvalid() {
 		assertThrows(IllegalArgumentException.class, () -> Base64Id.validate(TOO_LONG_BASE64),
 				"String with too many characters must not be valid");
 	}
 
 	@Test
-	public void validValidates() {
+	void validValidates() {
 		assertNotNull(Base64Id.validate(VALID_BASE64_1), "valid String must validate sucessfully");
 	}
 

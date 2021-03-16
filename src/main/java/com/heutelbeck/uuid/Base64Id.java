@@ -59,9 +59,7 @@ public class Base64Id {
 	 * @return true, if the String is a Base64 encoded UUID
 	 */
 	public static boolean isValid(String id) {
-		if (id == null) {
-			return false;
-		} else if (!Base64.isBase64(id)) {
+		if (id == null || !Base64.isBase64(id)) {
 			return false;
 		}
 

@@ -40,11 +40,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
           
-    - name: Build with Maven (JUnit, JaCoCo, Sonar) - Private Sonarqube Server 
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report sonar:sonar -Dsonar.host.url=https://sonar.ftk.de -Dsonar.login=${SONAR_TOKEN}
-
     - name: Build with Maven (JUnit, JaCoCo, Sonar) - Sonarcloud 
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
