@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/heutelbeck/base64uuid/workflows/build/badge.svg)](https://github.com/heutelbeck/base64uuid/actions) [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=heutelbeck_base64uuid)
+[![Build Status](https://github.com/heutelbeck/base64uuid/workflows/build/badge.svg)](https://github.com/heutelbeck/base64uuid/actions) [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/dashboard?id=heutelbeck_base64uuid)
 
 
 # Convenience class for compactly represented UUIDs encoding the 32bytes as Base64
