@@ -1,7 +1,7 @@
 [![Build Status](https://github.com/heutelbeck/base64uuid/workflows/build/badge.svg)](https://github.com/heutelbeck/base64uuid/actions) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=heutelbeck_base64uuid&metric=alert_status)](https://sonarcloud.io/dashboard?id=heutelbeck_base64uuid) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=heutelbeck_base64uuid&metric=code_smells)](https://sonarcloud.io/dashboard?id=heutelbeck_base64uuid)
 
 
-# Convenience class for compactly represented UUIDs encoding the 32bytes as Base64
+# Convenience class for compactly represented UUIDs encoding the 16bytes as Base64
 
 Usage example: `Base64Id.randomID()`
 
